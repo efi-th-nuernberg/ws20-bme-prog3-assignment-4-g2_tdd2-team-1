@@ -3,6 +3,27 @@ import static org.junit.Assert.*;
 
 public class TriangleCheckerTest {
     
+@Test
+
+public void testNoneTriangleNegativeNumbers() {
+
+// Arrange
+
+float a = -2;
+
+float b = -2;
+
+float c = -2;
+
+// Act
+
+TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
+
+// Assert
+
+assertEquals(TriangleChecker.TriangleType.NONE, type);
+
+}
     @Test
     public void testValidTriangle() {
 
@@ -18,6 +39,8 @@ public class TriangleCheckerTest {
         assertEquals(TriangleChecker.TriangleType.NORMAL, type);
 
     }
+
+    
     @Test
     public void testEquilateralTriangle() {
 
@@ -62,5 +85,7 @@ public class TriangleCheckerTest {
       // Assert
       assertEquals(TriangleChecker.TriangleType.ISOSCELES, type);
     }
+
+
     
 }

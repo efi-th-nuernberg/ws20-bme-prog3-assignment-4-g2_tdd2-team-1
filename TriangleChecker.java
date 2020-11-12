@@ -47,11 +47,15 @@ public class TriangleChecker {
 
   // Analyse der Dreiecksart
   public static TriangleType checkTriangle(float a, float b, float c) {
+    //wenn alle negativ
+    if (a < 0 && b < 0 && c < 0){
+      return TriangleType.NONE;
+    }
     //Gleichseitiges Dreieck
     if (a == b && a == c){
       return TriangleType.EQUILATERAL;
     }
-    //Kein Dreieck
+    //Kein Dreieck + Grenzwerte abgesichert 
     if (a < 0 || b < 0 || c < 0 || ((a+b)<=c) || ((c+b)<=a) || ((a+c)<=b)){
         return TriangleType.NONE;
     }
